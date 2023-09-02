@@ -5,3 +5,5 @@
   * https://www.postman.com/grey-eclipse-532178/workspace/kimyunghan-jpa-2
 * page
   * http://localhost:8080/
+* db
+  * http://localhost:8082/
