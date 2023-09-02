@@ -64,6 +64,19 @@ public class OrderRepository {
     }
 
     /**
+     * fetch join
+     * Order 조회하는데, 한 번 쿼리로 member, delivery 를 join 해서 한 번에 가져온다.
+     * fetch 는 jpa 만 있는 명령어임
+     */
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery(
+            "select o from Order o" +
+                " join fetch o.member m" +
+                " join fetch o.delivery d", Order.class
+        ).getResultList();
+    }
+
+    /**
      * 방법2) JPA Criteria 로 처리 -> 실무에서 사용 X, 유지보수 X
      */
     public List<Order> findAllByCriteria(OrderSearch orderSearch) {
