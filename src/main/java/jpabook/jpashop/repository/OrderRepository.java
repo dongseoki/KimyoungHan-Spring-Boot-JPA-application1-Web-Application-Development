@@ -27,7 +27,7 @@ public class OrderRepository {
     /**
      * 방법1) JPQL -> 실무에서 사용 x
      */
-    public List<Order> findAllByString(OrderSearch orderSearch) {
+     public List<Order>  findAllByString(OrderSearch orderSearch) {
         String jpql = "select o from Order o join o.member m";
         boolean isFirstCondition = true;
 
